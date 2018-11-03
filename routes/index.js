@@ -77,10 +77,19 @@ router.get('/deletenote/:id',function(req, res){
 	});
 })
 
-/*router.put('/editnote/:id',function(req, res){
-	Notes.find({_id: req.params.id}).put();
+router.get('/editnote/:id',function(req, res){
+	Notes.findOne({_id: req.params.id},function(err, note){
+		console.log('note edited', note);
+		res.render('editnote', {note})
+	});
 })
-*/
+
+router.post('/editnote',function(req, res){
+	Notes.findOneAndUpdate({_id: req.body._id}, {$set: req.body}, function(err, note){
+		console.log('note updated..', note);
+		if (!err) {res.redirect('/viewnote');}
+	});
+})
+
 
 module.exports = router;
-

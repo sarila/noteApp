@@ -8,11 +8,9 @@
 	<% notes. forEach(function(note, i) { %>
 	<div class="note">
 		<p><b><%= note.title %></b><br/><br/> <%= note.note %></p>
-		<button type="submit">Edit</button>
+		<button type="submit"><a href="/editnote/<%= note._id%>">Edit</a></button>
 		<button type="submit"><a href="/deletenote/<%= note._id%>">delete</a></button>
-		<button type="submit">Add</button>
-
-		
+		<button type="submit">Add</button>	
 	</div>
  <%	}) %>
 

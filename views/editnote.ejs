@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Note</title>
+	
+</head>
+<body>
+	<h1>Edit Note</h1>
+	<div class="container">
+	<form method="post" action="/editnote">
+		<input type="hidden" name="_id" class="form-control" value="<%= note._id %>">
+		title: <textarea name="title" rows="2" columns="2"><%= note.title %></textarea><br/>
+		<br/>
+		note: <textarea name="note" rows="6" columns="50" placeholder="Notes"><%= note.note %></textarea><br/>
+		<br/>
+		<button type="submit">View Note</button>
+	</form>
+	</div>
+</body>
+</html>
